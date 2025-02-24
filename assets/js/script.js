@@ -91,11 +91,11 @@ const levels = [
       { x: 1200, y: worldHeight - 270, width: 100, height: 100, type: 'lizard', minX: 1100, maxX: 1300, speed: 1, direction: 1 }
     ],
     coins: [
-      { x: 550, y: worldHeight - 230, width: 20, height: 20 },
-      { x: 850, y: worldHeight - 300, width: 20, height: 20 },
-      { x: 1150, y: worldHeight - 400, width: 20, height: 20 },
-      { x: 1550, y: worldHeight - 300, width: 20, height: 20 },
-      { x: 1950, y: worldHeight - 320, width: 20, height: 20 }
+      { x: 550, y: worldHeight - 230, width: 20, height: 45 },
+      { x: 850, y: worldHeight - 300, width: 20, height: 45 },
+      { x: 1150, y: worldHeight - 400, width: 20, height: 45 },
+      { x: 1550, y: worldHeight - 300, width: 20, height: 45 },
+      { x: 1950, y: worldHeight - 320, width: 20, height: 45 }
     ],
     powerups: [
       { x: 900, y: worldHeight - 550, width: 100, height: 100, type: 'doublejump' },
