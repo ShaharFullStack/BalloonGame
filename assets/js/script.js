@@ -16,6 +16,7 @@ const imageSources = {
   hero_jump: 'assets/images/hero_jump.png',
   orc: 'assets/images/orc.png',
   lizard: 'assets/images/lizard.png',
+  enemy: 'assets/images/enemy.png',
   coin: 'assets/images/coin.png',
   finish: 'assets/images/finish.png',
   platform: 'assets/images/platform.png',
@@ -90,7 +91,9 @@ const levels = [
 
     enemies: [
       { x: 600, y: worldHeight - 300, width: 100, height: 150, type: 'orc', minX: 500, maxX: 700, speed: 1, direction: 1 },
-      { x: 1200, y: worldHeight - 350, width: 100, height: 170, type: 'lizard', minX: 1100, maxX: 1300, speed: 1, direction: 1 }
+      { x: 1200, y: worldHeight - 350, width: 100, height: 170, type: 'lizard', minX: 1100, maxX: 1300, speed: 1, direction: 1 },
+      { x: 2100, y: worldHeight - 120, width: 100, height: 100, type: 'enemy', minX: 2100, maxX: 2800, speed: 5, direction: 1 }
+
     ],
     coins: [
       { x: 550, y: worldHeight - 230, width: 45, height: 45 },
@@ -106,7 +109,7 @@ const levels = [
     checkpoints: [
       { x: 1300, y: worldHeight - 100, width: 100, height: 100, activated: false }
     ],
-    finish: { x: 2700, y: worldHeight - 200, width: 140, height: 170 }
+    finish: { x: 2700, y: worldHeight - 200, width: 150, height: 180 }
   },
   {
     background: 'assets/images/background.png',
@@ -129,7 +132,8 @@ const levels = [
     enemies: [
       { x: 400, y: worldHeight - 200, width: 100, height: 100, type: 'orc', minX: 300, maxX: 500, speed: 1, direction: 1 },
       { x: 1000, y: worldHeight - 300, width: 100, height: 100, type: 'lizard', minX: 900, maxX: 1100, speed: 1, direction: 1 },
-      { x: 1600, y: worldHeight - 400, width: 100, height: 100, type: 'orc', minX: 1500, maxX: 1700, speed: 1, direction: 1 }
+      { x: 1600, y: worldHeight - 400, width: 100, height: 100, type: 'orc', minX: 1500, maxX: 1700, speed: 1, direction: 1 },
+      { x: 2400, y: worldHeight - 600, width: 100, height: 100, type: 'enemy', minX: 2400, maxX: 2900, speed: 5, direction: 2 }
     ],
     coins: [
       { x: 350, y: worldHeight - 150, width: 20, height: 20 },
@@ -573,7 +577,7 @@ function render() {
   // ציור השחקן
   ctx.save();
   ctx.translate(player.x - cameraX + player.width / 2, player.y - cameraY + player.height / 2);
-  ctx.scale(player.direction, 1); // שיקוף בכיוון X אם הדמות הולכת אחורה
+  ctx.scale(player.direction, 1);
   const heroImage = player.isOnGround ? images.hero_idle : images.hero_jump;
   ctx.drawImage(heroImage, -player.width / 2, -player.height / 2, player.width, player.height);
   ctx.restore();
