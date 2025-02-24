@@ -11,7 +11,7 @@ const worldHeight = 940;
 // טעינת תמונות
 const images = {};
 const imageSources = {
-  background: 'assets/images/background.png',
+  background: 'assets/images/background2.png',
   hero_idle: 'assets/images/hero_idle.png',
   hero_jump: 'assets/images/hero_jump.png',
   orc: 'assets/images/orc.png',
@@ -87,15 +87,15 @@ const levels = [
       { x: 700, y: worldHeight -400 , width: 100, height: 45, speed: 2, minX: 600, maxX: 1200, direction: 1 }
     ],
     enemies: [
-      { x: 600, y: worldHeight - 280, width: 100, height: 100, type: 'orc', minX: 500, maxX: 700, speed: 1, direction: 1 },
-      { x: 1200, y: worldHeight - 270, width: 100, height: 100, type: 'lizard', minX: 1100, maxX: 1300, speed: 1, direction: 1 }
+      { x: 600, y: worldHeight - 300, width: 100, height: 150, type: 'orc', minX: 500, maxX: 700, speed: 1, direction: 1 },
+      { x: 1200, y: worldHeight - 350, width: 100, height: 170, type: 'lizard', minX: 1100, maxX: 1300, speed: 1, direction: 1 }
     ],
     coins: [
-      { x: 550, y: worldHeight - 230, width: 20, height: 45 },
-      { x: 850, y: worldHeight - 300, width: 20, height: 45 },
-      { x: 1150, y: worldHeight - 400, width: 20, height: 45 },
-      { x: 1550, y: worldHeight - 300, width: 20, height: 45 },
-      { x: 1950, y: worldHeight - 320, width: 20, height: 45 }
+      { x: 550, y: worldHeight - 230, width: 45, height: 45 },
+      { x: 850, y: worldHeight - 300, width: 45, height: 45 },
+      { x: 1150, y: worldHeight - 400, width: 45, height: 45 },
+      { x: 1550, y: worldHeight - 300, width: 45, height: 45 },
+      { x: 1950, y: worldHeight - 320, width: 45, height: 45 }
     ],
     powerups: [
       { x: 900, y: worldHeight - 550, width: 100, height: 100, type: 'doublejump' },
@@ -107,21 +107,22 @@ const levels = [
     finish: { x: 2800, y: worldHeight - 100, width: 600, height: 500 }
   },
   {
+    background: 'assets/images/background.png',
     start: { x: 100, y: worldHeight - 250 },
     platforms: [
       { x: -700, y: worldHeight - 10, width: 2000, height: 20 },
-      { x: 0, y: worldHeight - 10, width: 2000, height: 20 },
-      { x: 100, y: worldHeight - 10, width: 200, height: 20 },
-      { x: 300, y: worldHeight - 100, width: 200, height: 20 },
-      { x: 600, y: worldHeight - 150, width: 200, height: 20 },
-      { x: 900, y: worldHeight - 200, width: 200, height: 20 },
-      { x: 1200, y: worldHeight - 250, width: 200, height: 20 },
-      { x: 1500, y: worldHeight - 300, width: 200, height: 20 },
-      { x: 1800, y: worldHeight - 350, width: 200, height: 20 },
-      { x: 2100, y: worldHeight - 400, width: 200, height: 20 },
-      { x: 2400, y: worldHeight - 450, width: 200, height: 20 },
-      { x: 2700, y: worldHeight - 500, width: 300, height: 20 },
-      { x: 1200, y: worldHeight - 300, width: 100, height: 20, speed: 2, minX: 1100, maxX: 2300, direction: 1 }
+      { x: 0, y: worldHeight - 10, width: 2000, height: 45 },
+      { x: 100, y: worldHeight - 10, width: 200, height: 45 },
+      { x: 300, y: worldHeight - 100, width: 200, height: 45 },
+      { x: 600, y: worldHeight - 150, width: 200, height: 45 },
+      { x: 900, y: worldHeight - 200, width: 200, height: 45 },
+      { x: 1200, y: worldHeight - 250, width: 200, height: 45 },
+      { x: 1500, y: worldHeight - 300, width: 200, height: 45 },
+      { x: 1800, y: worldHeight - 350, width: 200, height: 45 },
+      { x: 2100, y: worldHeight - 400, width: 200, height: 45 },
+      { x: 2400, y: worldHeight - 450, width: 200, height: 45 },
+      { x: 2700, y: worldHeight - 500, width: 300, height: 45 },
+      { x: 1200, y: worldHeight - 300, width: 100, height: 45, speed: 2, minX: 1100, maxX: 2300, direction: 1 }
     ],
     enemies: [
       { x: 400, y: worldHeight - 200, width: 100, height: 100, type: 'orc', minX: 300, maxX: 500, speed: 1, direction: 1 },
@@ -441,6 +442,7 @@ function render() {
   }
 
   // ציור הרקע
+  ctx.drawImage(images.background, -cameraX, -cameraY, worldWidth, worldHeight);
   ctx.drawImage(images.background, -cameraX, -cameraY, worldWidth, worldHeight);
 
   // ציור פלטפורמות
