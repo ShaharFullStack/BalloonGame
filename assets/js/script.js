@@ -76,6 +76,7 @@ const levels = [
     start: { x: 100, y: worldHeight - 250 },
     platforms: [
       { x: -600, y: worldHeight - 15, width: 2000, height: 45 },
+
       { x: 300, y: worldHeight - 20, width: 2000, height: 45 },
       { x: 200, y: worldHeight - 140, width: 200, height: 45 },
       { x: 500, y: worldHeight - 200, width: 200, height: 45 },
@@ -86,6 +87,7 @@ const levels = [
       { x: 2300, y: worldHeight - 50, width: 700, height: 50 },
       { x: 700, y: worldHeight -400 , width: 100, height: 45, speed: 2, minX: 600, maxX: 1200, direction: 1 }
     ],
+
     enemies: [
       { x: 600, y: worldHeight - 300, width: 100, height: 150, type: 'orc', minX: 500, maxX: 700, speed: 1, direction: 1 },
       { x: 1200, y: worldHeight - 350, width: 100, height: 170, type: 'lizard', minX: 1100, maxX: 1300, speed: 1, direction: 1 }
@@ -104,7 +106,7 @@ const levels = [
     checkpoints: [
       { x: 1300, y: worldHeight - 100, width: 100, height: 100, activated: false }
     ],
-    finish: { x: 2800, y: worldHeight - 100, width: 600, height: 500 }
+    finish: { x: 2700, y: worldHeight - 200, width: 140, height: 170 }
   },
   {
     background: 'assets/images/background.png',
@@ -145,7 +147,83 @@ const levels = [
     checkpoints: [
       { x: 1400, y: worldHeight - 50, width: 50, height: 50, activated: false }
     ],
-    finish: { x: 2800, y: worldHeight - 750, width: 220, height: 160 }
+    finish: { x: 2850, y: worldHeight - 650, width: 140, height: 170 }
+  },
+  {
+    start: { x: 100, y: worldHeight - 250 },
+    platforms: [
+      { x: 0, y: worldHeight - 50, width: 3000, height: 50 },
+      { x: 300, y: worldHeight - 200, width: 200, height: 45 },
+      { x: 700, y: worldHeight - 300, width: 200, height: 45 },
+      { x: 1100, y: worldHeight - 400, width: 200, height: 45 },
+      { x: 1500, y: worldHeight - 500, width: 200, height: 45 },
+      { x: 1900, y: worldHeight - 600, width: 200, height: 45 },
+      { x: 2300, y: worldHeight - 700, width: 200, height: 45 },
+      { x: 2700, y: worldHeight - 800, width: 200, height: 45 },
+      { x: 1000, y: worldHeight - 250, width: 150, height: 45, speed: 2, minX: 1000, maxX: 1400, direction: 1 },
+      { x: 1600, y: worldHeight - 550, width: 100, height: 55, speed: 3, minX: 1600, maxX: 2900, direction: 1 }
+    ],
+    enemies: [
+      { x: 700, y: worldHeight - 300 - 150, width: 100, height: 150, type: 'orc', minX: 700, maxX: 900, speed: 1, direction: 1 },
+      { x: 1500, y: worldHeight - 500 - 150, width: 100, height: 150, type: 'lizard', minX: 1500, maxX: 1700, speed: 1, direction: 1 },
+      { x: 2300, y: worldHeight - 700 - 150, width: 100, height: 150, type: 'orc', minX: 2300, maxX: 2500, speed: 1, direction: 1 }
+    ],
+    coins: [
+      { x: 350, y: worldHeight - 250, width: 45, height: 45 },
+      { x: 750, y: worldHeight - 350, width: 45, height: 45 },
+      { x: 1150, y: worldHeight - 450, width: 45, height: 45 },
+      { x: 1550, y: worldHeight - 550, width: 45, height: 45 },
+      { x: 1950, y: worldHeight - 650, width: 45, height: 45 },
+      { x: 2350, y: worldHeight - 750, width: 45, height: 45 },
+      { x: 2750, y: worldHeight - 850, width: 45, height: 45 }
+    ],
+    powerups: [
+      { x: 1000, y: worldHeight - 400, width: 100, height: 100, type: 'doublejump' },
+      { x: 2500, y: worldHeight - 750, width: 100, height: 100, type: 'invincibility' }
+    ],
+    checkpoints: [
+      { x: 1500, y: worldHeight - 550, width: 100, height: 100, activated: false },
+      { x: 2700, y: worldHeight - 850, width: 100, height: 100, activated: false }
+    ],
+    finish: { x: 2850, y: worldHeight - 700, width: 140, height: 170 }
+  },
+  {
+    start: { x: 100, y: worldHeight - 250 },
+    platforms: [
+      { x: 0, y: worldHeight - 50, width: 3000, height: 50 },
+      { x: 300, y: worldHeight - 200, width: 200, height: 45 },
+      { x: 700, y: worldHeight - 300, width: 200, height: 45 },
+      { x: 1100, y: worldHeight - 400, width: 200, height: 45 },
+      { x: 1500, y: worldHeight - 500, width: 200, height: 45 },
+      { x: 1900, y: worldHeight - 600, width: 200, height: 45 },
+      { x: 2300, y: worldHeight - 700, width: 200, height: 45 },
+      { x: 2700, y: worldHeight - 800, width: 200, height: 45 },
+      { x: 1000, y: worldHeight - 250, width: 150, height: 45, speed: 2, minX: 1000, maxX: 1400, direction: 1 },
+      { x: 1600, y: worldHeight - 450, width: 100, height: 45, speed: 4, minX: 1600, maxX: 2900, direction: 1 }
+    ],
+    enemies: [
+      { x: 700, y: worldHeight - 10 - 150, width: 100, height: 150, type: 'orc', minX: 700, maxX: 900, speed: 1, direction: 2 },
+      { x: 1500, y: worldHeight - 500 - 150, width: 100, height: 150, type: 'lizard', minX: 1500, maxX: 1700, speed: 1, direction: 1 },
+      { x: 2300, y: worldHeight - 700 - 150, width: 100, height: 150, type: 'orc', minX: 2300, maxX: 2500, speed: 1, direction: 1 }
+    ],
+    coins: [
+      { x: 350, y: worldHeight - 250, width: 45, height: 45 },
+      { x: 750, y: worldHeight - 350, width: 45, height: 45 },
+      { x: 1150, y: worldHeight - 450, width: 45, height: 45 },
+      { x: 1550, y: worldHeight - 550, width: 45, height: 45 },
+      { x: 1950, y: worldHeight - 650, width: 45, height: 45 },
+      { x: 2350, y: worldHeight - 750, width: 45, height: 45 },
+      { x: 2750, y: worldHeight - 850, width: 45, height: 45 }
+    ],
+    powerups: [
+      { x: 1000, y: worldHeight - 400, width: 100, height: 100, type: 'doublejump' },
+      { x: 2500, y: worldHeight - 750, width: 100, height: 100, type: 'invincibility' }
+    ],
+    checkpoints: [
+      { x: 1500, y: worldHeight - 550, width: 100, height: 100, activated: false },
+      { x: 2700, y: worldHeight - 850, width: 100, height: 100, activated: false }
+    ],
+    finish: { x: 2800, y: worldHeight - 450, width: 200, height: 150 }
   }
 ];
 
@@ -191,9 +269,9 @@ let dashPressed = false;
 let gameState = 'playing'; 
 
 // קבועים לפיזיקה
-const gravity = 0.3;
+const gravity = 0.2;
 const jumpSpeed = -12;
-const moveSpeed = 5;
+const moveSpeed = 3;
 const dashSpeed = 15;
 const dashDuration = 10; 
 const dashCooldownTime = 60; 
@@ -317,6 +395,18 @@ function update() {
     }
   }
 
+  player.vy += gravity;
+
+  // עדכון כיוון השחקן לפי תנועה
+  if (player.vx > 0) {
+    player.direction = 1; // פונה ימינה
+  } else if (player.vx < 0) {
+    player.direction = -1; // פונה שמאלה
+  }
+
+  player.x += player.vx;
+  player.y += player.vy;
+
   // התנגשות עם פלטפורמות
   player.isOnGround = false;
   player.onPlatform = null;
@@ -429,6 +519,9 @@ function update() {
   cameraY = Math.max(0, Math.min(worldHeight - canvas.height, player.y - canvas.height / 2));
 }
 
+// כיוון מבט השחקן
+player.direction = 1;
+
 // ציור המשחק
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -442,7 +535,6 @@ function render() {
   }
 
   // ציור הרקע
-  ctx.drawImage(images.background, -cameraX, -cameraY, worldWidth, worldHeight);
   ctx.drawImage(images.background, -cameraX, -cameraY, worldWidth, worldHeight);
 
   // ציור פלטפורמות
@@ -479,12 +571,12 @@ function render() {
   ctx.drawImage(images.finish, finish.x - cameraX, finish.y - cameraY, finish.width, finish.height);
 
   // ציור השחקן
-  if (player.invincible) {
-    ctx.globalAlpha = 0.6;
-  }
+  ctx.save();
+  ctx.translate(player.x - cameraX + player.width / 2, player.y - cameraY + player.height / 2);
+  ctx.scale(player.direction, 1); // שיקוף בכיוון X אם הדמות הולכת אחורה
   const heroImage = player.isOnGround ? images.hero_idle : images.hero_jump;
-  ctx.drawImage(heroImage, player.x - cameraX, player.y - cameraY, player.width, player.height);
-  ctx.globalAlpha = 1;
+  ctx.drawImage(heroImage, -player.width / 2, -player.height / 2, player.width, player.height);
+  ctx.restore();
 
   // ציור חלקיקים
   for (let p of particles) {
