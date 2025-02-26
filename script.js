@@ -54,6 +54,7 @@ async function loadPayments() {
     paymentsTable.innerHTML = '';
     let totalIncome = 0;
     const lessonCounts = {};
+    const totalAmounts = {};
 
     payments.forEach(payment => {
         const row = paymentsTable.insertRow();
@@ -80,12 +81,15 @@ async function loadPayments() {
 
         totalIncome += parseFloat(payment.amount);
         lessonCounts[payment.student] = (lessonCounts[payment.student] || 0) + 1;
+        totalAmounts[payment.student] = (totalAmounts[payment.student] || 0) + parseFloat(payment.amount);
     });
 
     totalIncomeElement.textContent = totalIncome.toFixed(2);
+    const labels = Object.keys(lessonCounts).sort();
     const chartData = {
-        labels: Object.keys(lessonCounts).sort(),
-        values: Object.keys(lessonCounts).sort().map(name => lessonCounts[name])
+        labels: labels,
+        lessonCounts: labels.map(name => lessonCounts[name]),
+        totalAmounts: labels.map(name => totalAmounts[name])
     };
     updateChart(chartData);
 }
@@ -215,14 +219,7 @@ accordions.forEach((acc) => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const initialStudents = [
-        { name: "אורי ואלון ורד", price: "300.00" },
-        { name: "איה נחשוני", price: "180.00" },
-        { name: "יהונתן אמודי", price: "180.00" },
-        { name: "מיה ליבר", price: "180.00" },
-        { name: "שני", price: "180.00" },
-        { name: "גיא ושירה גלס", price: "300.00" },
-    ];
+    const initialStudents = [];
     for (const student of initialStudents) {
         if (!await db.students.get(student.name)) {
             await db.students.add(student);
