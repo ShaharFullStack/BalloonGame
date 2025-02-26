@@ -676,3 +676,4 @@ loadImages(() => {
   loadLevel(currentLevel);
   gameLoop();
 });
+
